@@ -33,7 +33,7 @@ class SoftwareRender:
         return Object3D(self, vertex, faces)
 
     def draw(self):
-        self.screen.fill(pg.Color('darkslategray'))
+        self.screen.fill(pg.Color('pink'))
         self.object.draw()
 
     def run(self):
@@ -51,6 +51,6 @@ class SoftwareRender:
             self.clock.tick(self.FPS)
 
 
-if __name__ == '__main__':
-    app = SoftwareRender()
-    app.run()
+
+app = SoftwareRender()
+app.run()
