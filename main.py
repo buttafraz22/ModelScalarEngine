@@ -5,7 +5,7 @@ import sys
 import pygame as pg
 
 
-class SoftwareRender:
+class SoftwareRenderer:
     def __init__(self):
         pg.init()
         self.RES = self.WIDTH, self.HEIGHT = 1600, 900
@@ -16,7 +16,7 @@ class SoftwareRender:
         self.create_objects()
 
     def create_objects(self):
-        self.camera = Camera(self, [-5, 6, -55])
+        self.camera = Camera(self, [-5, 1, -55])
         self.projection = Projection(self)
         self.object = self.get_object_from_file('resources/radar_obj.obj')
         self.object.rotate_y(-math.pi / 4)
@@ -41,9 +41,9 @@ class SoftwareRender:
             self.draw()
             self.camera.control()
             for event in pg.event.get():
-                if event.type == pg.QUIT:
-                    running = False
-                elif event.type == pg.KEYDOWN:
+                # if event.type == pg.QUIT:
+                #     running = False
+                if event.type == pg.KEYDOWN:
                     if event.key == pg.K_ESCAPE:
                        sys.exit()  # Set running to False to end the while loop.
             pg.display.set_caption(str(self.clock.get_fps()))
@@ -52,5 +52,5 @@ class SoftwareRender:
 
 
 
-app = SoftwareRender()
+app = SoftwareRenderer()
 app.run()

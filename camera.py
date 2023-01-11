@@ -3,14 +3,14 @@ from Matrices import *
 import numpy as np
 
 class Camera:
-    def __init__(self, render, position):
-        self.render = render
+    def __init__(self, renderer, position):
+        self.renderer = renderer
         self.position = np.array([*position, 1.0])
         self.forward = np.array([0, 0, 1, 1])
         self.up = np.array([0, 1, 0, 1])
         self.right = np.array([1, 0, 0, 1])
         self.h_fov = math.pi / 3
-        self.v_fov = self.h_fov * (render.HEIGHT / render.WIDTH)
+        self.v_fov = self.h_fov * (renderer.HEIGHT / renderer.WIDTH)
         self.near_plane = 0.1
         self.far_plane = 100
         self.moving_speed = 0.3
