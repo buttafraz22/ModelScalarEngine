@@ -1,5 +1,5 @@
 import pygame as pg
-from matrix_functions import *
+from Matrices import *
 from numba import njit
 
 
